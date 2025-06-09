@@ -1,0 +1,26 @@
+{
+  "name": "gestor-tareas-completo",
+  "version": "1.0.0",
+  "description": "Sistema completo de gestión de tareas con notificaciones WhatsApp",
+  "main": "scripts/start.sh",
+  "scripts": {
+    "start": "bash scripts/start.sh",
+    "stop": "bash scripts/stop.sh", 
+    "restart": "npm run stop && sleep 3 && npm run start",
+    "status": "ps aux | grep -E '(node.*bot|php.*artisan)'",
+    "logs": "tail -f logs/*.log",
+    "logs:bot": "tail -f logs/whatsapp-bot.log",
+    "logs:scheduler": "tail -f logs/scheduler.log", 
+    "logs:server": "tail -f logs/laravel-server.log",
+    "setup": "bash scripts/setup.sh",
+    "test": "curl -s http://localhost:3000/test && curl -s http://localhost:8000",
+    "clean-logs": "rm -f logs/*.log && echo 'Logs limpiados'"
+  },
+  "keywords": ["tareas", "whatsapp", "laravel", "notifications"],
+  "author": "Alex",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "local"
+  }
+}
